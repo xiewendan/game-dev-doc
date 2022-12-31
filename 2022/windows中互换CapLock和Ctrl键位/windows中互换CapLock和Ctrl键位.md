@@ -1,13 +1,15 @@
+#! https://zhuanlan.zhihu.com/p/595740838
+# 1. windows caplock和ctrl键位互换
 
-# 1. 问题
+# 2. 问题
 
 键盘ctrl键位非常反人类，CapLock用处不大，打算把CapLock和ctrl互换位置一下
 
-# 2. 思路
+# 3. 思路
 
-# 3. 解决方案
+# 4. 解决方案
 
-## 3.1. 使用
+## 4.1. 使用
 * 更改
   新建一个文本文件，命名为caplock_leftctrl_switch.reg，将如下内容复制进去，双击执行即可
   ~~~
@@ -24,7 +26,7 @@
   "Scancode Map"=-
   ~~~
 
-## 3.2. 原理
+## 4.2. 原理
 
 在windows中通过在注册表中添加Scancode Map项来达到键盘映射的目的，Scancode Map项位于注册表的[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet\Control\Keyboard Layout]中（默认是不存在的）固定格式如下：
 
@@ -42,7 +44,7 @@ hex:[填充八个 00] [映射项数] [填充3个 00] [映射后ScanCode 原ScanC
   ~~~
 
 
-## 3.3. 练习
+## 4.3. 练习
 
 将F9和F10映射为音乐的开始暂停即Play Stop键。他们的code分别是
 | 按键 | Scancode |
@@ -59,13 +61,13 @@ hex:[填充八个 00] [映射项数] [填充3个 00] [映射后ScanCode 原ScanC
 "Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,43,00,22,E0,44,00,24,E0,00,00,00,00
 ~~~
 
-## 3.4. Scancode码
+## 4.4. Scancode码
 
-![键盘scancode.png](键盘scancode.png)
+![keyboard_scancode.png](keyboard_scancode.png)
 
-# 4. 结论
+# 5. 结论
 
 
-# 5. 参考文献
+# 6. 参考文献
 
 [1] https://www.jianshu.com/p/852f69ad41a9
