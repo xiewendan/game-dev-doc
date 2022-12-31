@@ -1,4 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/595740838
+
 # 1. windows caplock和ctrl键位互换
 
 # 2. 问题
@@ -65,9 +66,7 @@ hex:[填充八个 00] [映射项数] [填充3个 00] [映射后ScanCode 原ScanC
 
 ![keyboard_scancode.png](keyboard_scancode.png)
 
-# 5. 结论
 
-
-# 6. 参考文献
+# 5. 参考文献
 
 [1] https://www.jianshu.com/p/852f69ad41a9
