@@ -2,6 +2,7 @@
 
 # 1. windows上搞个linux系统
 [TOC]
+>【github项目】 https://github.com/xiewendan/game-dev-doc/tree/master
 
 # 2. 问题
 

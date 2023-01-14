@@ -1,4 +1,7 @@
 ## .1. py-spy
+
+>【github项目】 https://github.com/xiewendan/game-dev-doc/tree/master
+
 * [py-spy](https://github.com/benfred/py-spy)是一款python的profile工具
 
 * 特性

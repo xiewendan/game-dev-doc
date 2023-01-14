@@ -3,6 +3,7 @@
 # 1. 访问github
 
 [TOC]
+>【github项目】 https://github.com/xiewendan/game-dev-doc/tree/master
 
 # 2. 问题
 
