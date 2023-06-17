@@ -23,6 +23,8 @@
   * gitee国内访问很快，可以方便用来提交和下载
   * gitee提供了[仓库镜像功能](https://gitee.com/help/articles/4336#article-header0)，可以将gitee的仓库，自动同步到github上
 
+* 使用[fastgithub](https://github.com/dotnetcore/FastGithub)
+
 # 5. 结论
 
 * 暂时利用Watt Toolkit去访问github上别人的项目
