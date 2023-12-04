@@ -30,3 +30,10 @@
     * native表示包含c++的代码
     * pid表示进程id，需要替换
   * 将生成的文件上传到网站`https://www.speedscope.app/`即可查看
+
+* 问题
+  * 在python3.10版本是可以正常使用，在python3.11上会报错，报错如下
+    Error: Failed to find a python interpreter in the .data section
+    * 可能性1，自己编译的python导致的。调整编译方式，能够找到.data
+    * 可能性2，py-spy不支持python3.11。确认，官方版本3.11.4存在该问题。 解决方案，切换为3.10来跑
+    * 该问题在py-spy的后续版本中修复了

@@ -16,6 +16,7 @@
 
 # 4. 解决方案
 
+## 4.1. 加速器
 * 加速器: [Watt Toolkit](https://steampp.net/)，原名叫steam++，发现可以用来加速github，果断下载并试用，可以访问，就是速度慢一点。
   * 当前文档目录放了一个已经下载好的版本 `Steam  _win_x64_v2.8.6.exe`
 
@@ -25,7 +26,37 @@
 
 * 使用[fastgithub](https://github.com/dotnetcore/FastGithub)
 
+## 4.2. 代理
+
+### 4.2.1. 机场推荐列表
+
+* [clashnode](https://clashnode.xyz/) 五星推荐 
+  * 包含了各种机场
+  * 翻墙后可以访问的网站
+
+* [爱机场](https://aijichang.com/)
+  * 翻墙机场评测网站
+
+### 4.2.2. 代理软件
+* [v2rayN](https://github.com/2dust/v2rayN)
+* wgetcloud自带的软件
+
+### 4.2.3. wsl配置
+* 在wsl中希望访问github，需要额外配置，以便wsl中可以利用windows上的代理，访问github
+  [wsl2配置代理](https://www.cnblogs.com/tuilk/p/16287472.html)
+
+  * windows：代理软件，允许局域网
+  * windows：开启防火墙
+  * wsl：配置协议
+    ~~~
+    export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
+    export https_proxy="http://${hostip}:7890";
+    export http_proxy="http://${hostip}:7890";
+    ~~~
+    > 这里设置端口和代理软件，允许局域网的端口要一致
+
 # 5. 结论
 
-* 暂时利用Watt Toolkit去访问github上别人的项目
-* 自己的项目提交到gitee，并自动同步到github上
+* &#9733;&#9733;&#9733;&#9733;&#9733; 通过代理访问github
+* &#9733;&#9733;&#9733;&#9733;&#9734; 暂时利用Watt Toolkit去访问github上别人的项目
+* &#9733;&#9733;&#9734;&#9734;&#9734; 自己的项目提交到gitee，并自动同步到github上
