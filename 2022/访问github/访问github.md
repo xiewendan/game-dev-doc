@@ -54,6 +54,28 @@
     export http_proxy="http://${hostip}:7890";
     ~~~
     > 这里设置端口和代理软件，允许局域网的端口要一致
+### 4.2.4. 阿里linux 配置
+* [linux下配置V2ray作为客户端来访问GitHub、G*le等服务](https://www.witersen.com/?p=1408)
+  * 启动v2ray
+    ~~~
+    ./v2ray -config config.json
+    ~~~
+
+  * 配置代理 .bashrc
+    ~~~sh
+    # set proxy
+    function setproxy() {
+        export http_proxy=socks5://127.0.0.1:10808
+        export https_proxy=socks5://127.0.0.1:10808
+        export ftp_proxy=socks5://127.0.0.1:10808
+        export no_proxy="172.16.x.x"
+    }
+    ​
+    # unset proxy
+    function unsetproxy() {
+        unset http_proxy https_proxy ftp_proxy no_proxy
+    }
+    ~~~
 
 # 5. 结论
 
