@@ -56,6 +56,7 @@
     > 这里设置端口和代理软件，允许局域网的端口要一致
 ### 4.2.4. 阿里linux 配置
 * &#9733;&#9733;&#9733;&#9733;&#9733; [linux下配置V2ray作为客户端来访问GitHub、G*le等服务](https://www.witersen.com/?p=1408)
+  > 注：文章中的测试指令 `curl -socks5 127.0.0.1:10808 https://www.google.com` 有问题，在新版curl中需要修改为`curl -x socks5h://127.0.0.1:10808 www.google.com`
   * 启动v2ray
     ~~~
     ./v2ray -config config.json
@@ -65,6 +66,13 @@
     ~~~sh
     # set proxy
     function setproxy() {
+        export http_proxy=http://127.0.0.1:10809
+        export https_proxy=http://127.0.0.1:10809
+        export ftp_proxy=http://127.0.0.1:10809
+        export no_proxy="172.16.x.x"
+    }
+
+    function setproxysocks() {
         export http_proxy=socks5://127.0.0.1:10808
         export https_proxy=socks5://127.0.0.1:10808
         export ftp_proxy=socks5://127.0.0.1:10808
@@ -76,6 +84,7 @@
         unset http_proxy https_proxy ftp_proxy no_proxy
     }
     ~~~
+    > setproxy使用的是http协议，目前wget，git等不少工具对socks5的支持不好，所以，采用http协议作为代理转发
 
   * 启停代理
     ~~~sh
@@ -83,6 +92,12 @@
     setproxy
     # 停止代理
     unsetproxy
+    ~~~
+
+  * 关于从github上下载文件
+    * &#9733;&#9733;&#9733;&#9733;&#9733; [如何在GitHub正确地使用 Curl 下载文件](https://blog.51cto.com/wljs/5325795)
+    ~~~
+    curl -JLO https://github.com/libunwind/libunwind/releases/download/v1.8.0/libunwind-1.8.0.tar.gz
     ~~~
 
 # 5. 结论
