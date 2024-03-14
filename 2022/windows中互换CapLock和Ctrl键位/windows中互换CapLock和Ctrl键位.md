@@ -14,6 +14,14 @@
 
 ## 5.1. 使用
 
+* 替换 leftctrl_replace_caplock.reg，直接将leftctl替换掉caplock
+
+  ~~~s
+  Windows Registry Editor Version 5.00
+  [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+  "Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
+  ~~~
+
 * 更改
   新建一个文本文件，命名为caplock_leftctrl_switch.reg，将如下内容复制进去，双击执行即可
 
