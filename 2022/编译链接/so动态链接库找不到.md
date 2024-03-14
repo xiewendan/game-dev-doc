@@ -1,13 +1,15 @@
-#! https://zhuanlan.zhihu.com/p/637854965
+# 1. ! <https://zhuanlan.zhihu.com/p/637854965>
 
-# 1. so动态链接库找不到
+# 2. so动态链接库找不到
+
 [TOC]
->【github项目】 https://github.com/xiewendan/game-dev-doc/tree/master
+>【github项目】 <https://github.com/xiewendan/game-dev-doc/tree/master>
 
-# 2. 问题背景
+# 3. 问题背景
 
 * 目录结构
-  ~~~
+
+  ~~~s
   Server/Logic/main.py
   Server/GameCpp/Binary/libGameCore.so
   Server/GameCpp/Binary/Physx.so
@@ -22,10 +24,11 @@
 
   运行`main.py`，用cffi加载libGameCore.so，加载过程报错，说Physx.so文件找不到或不存在
 
-# 3. 解决过程
+# 4. 解决过程
 
 * 利用ldd找so文件
-  ~~~
+
+  ~~~s
   cd Server/GameCpp/Binary
 
   ldd libGameCore.so
@@ -33,7 +36,7 @@
 
   显示他依赖的库，并且可以找到
 
-  ~~~
+  ~~~s
   Physx.so->./Physx.so
   PxFoundation.so->./PxFoundation.so
   ~~~
@@ -45,11 +48,13 @@
     1、去程序已经指定的路径中查找，即so文件中的runpath，可以通过readelf so文件 | grep runpath
     2、环境变量LD_LIBRARY_PATH中查找
     3、去系统默认的路径中查找
-       ~~~
+
+       ~~~s
        /lib
        /usr/lib
        /ect/ld.so.conf
        ~~~
+
     4、去缓存路径中查找 /etc/ld.so.cache
     * so中的runpath可以在编译的时候指定rpath制定，修改cmake即可。其中\$ORIGIN，表示和so同目录查找动态链接库
       set_target_properties(libGameCore PROPERTIES LINK_FLAGS "-Wl,-rpath,\$ORIGIN")
@@ -61,4 +66,3 @@
   * 3、去修改ld.so.cache
 
   最后，选择cmake，比较合适
-

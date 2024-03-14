@@ -1,30 +1,30 @@
 [TOC]
 
 ------------------------------------------------------------------------------
-# 1. 1 problem
+
+# 1. problem
 
 the project will be launched in a month, i will list the most important event in doc. which is checklist in feature.
 
-
-
 ------------------------------------------------------------------------------
-# 2. 2 idea
+
+# 2. idea
 
 * the goal
 * focus of work
 * checklist
 
-
-
 ------------------------------------------------------------------------------
-# 3. 3 solution
+
+# 3. solution
 
 ## 3.1. the goal
+
 * keep the project launch smoothly. no core error.
 * for every kown problem, we have a solution to solve and we have rehearsed
 
-
 ## 3.2. focus of work
+
 * keep the project launch smoothly. no core error.
   * the process won't crash, memory leak
   * no error reward
@@ -37,9 +37,10 @@ the project will be launched in a month, i will list the most important event in
   * compensation reward
   * no affect other system
 
-
 ## 3.3. checklist
+
 ### 3.3.1. &#9733;&#9733;&#9733;&#9733;&#9733; no core error, can close and fix
+
 * [ ] the process won't crash, memory leak
   * [ ] cpp relate crash
   * [ ] cpp memory leak
@@ -50,7 +51,7 @@ the project will be launched in a month, i will list the most important event in
   * [ ] each system, send reward to user, check the count if it is ok
   * [ ] add some item warning system, for some valualbe item, we should catch the item get count in week or day. when it reach the warning cout, notify.
 
-* [ ] can close 
+* [ ] can close
   * [ ] all system, can close.
   * [ ] can reopen
 
@@ -70,8 +71,8 @@ the project will be launched in a month, i will list the most important event in
 * [ ] no affect other system
   * [ ] tick, when leak
 
-  
-###  3.3.2. &#9733;&#9733;&#9733;&#9733;&#9734; test and log
+### 3.3.2. &#9733;&#9733;&#9733;&#9733;&#9734; test and log
+
 * [ ] enough test
   * [ ] qa test
   * [ ] smoke test
@@ -87,7 +88,6 @@ the project will be launched in a month, i will list the most important event in
   * [ ] main process
   * [ ] key point
   
-
 ### 3.3.3. &#9733;&#9733;&#9733;&#9734;&#9734; monitor
 
 * [ ] process running status
@@ -101,14 +101,15 @@ the project will be launched in a month, i will list the most important event in
   * [ ] network
 
 ### 3.3.4. &#9733;&#9734;&#9734;&#9734;&#9734; review
+
 * [ ] review
   * [ ] self review, think the important check
   * [ ] experience expert review
   * [ ] gpt review
 
-
 ------------------------------------------------------------------------------
-# 4. 4 conclusion
+
+# 4. conclusion
 
 * usable (no matter when, it can serve)
 * checkable (quickly to find the problem)

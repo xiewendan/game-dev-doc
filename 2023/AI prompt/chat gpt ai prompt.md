@@ -1,4 +1,4 @@
-\#! <https://zhuanlan.zhihu.com/p/637858364>
+! <https://zhuanlan.zhihu.com/p/637858364>
 
 # 1. chat gpt prompt
 
@@ -71,8 +71,6 @@
 
   * 解决token不足的问题，先利用总结能力，将内容缩写，然后再把总结后内容，结合问题，发出
 
-
-
 # 5. 结论
 
 # 6. 展望
@@ -80,4 +78,3 @@
 # 7. 文献
 
 * [ChatGPT提示词工程师教程 吴恩达xOpenAI官方](https://www.bilibili.com/video/BV1AT41187qt/?spm_id_from=333.337.search-card.all.click)
-
