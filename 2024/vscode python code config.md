@@ -83,6 +83,18 @@ Our project is using python in vscode. when commits, the checker has a lot of fo
   ],
   ~~~
 
+* pep8
+
+  ~~~json
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+  },
+  "autopep8.args":[
+    "--max-line-length=100",
+    "--ignore=W191"
+  ]
+  ~~~
+
 * print-function check not exist in pylint
 
   ~~~s
