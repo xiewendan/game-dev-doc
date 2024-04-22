@@ -155,3 +155,79 @@ python get-pip.py
 ### 1.3.5. mongo
 
 * [mongo](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian-tarball/)
+
+### 1.3.6. 配置开机启动
+
+* add auto_start.sh
+
+  ~~~sh
+  echo "\nnew start=======" >> /root/auto_start.log
+  date >> /root/auto_start.log
+
+  echo "start v2ray" >> /root/auto_start.log
+  cd /root/projects/v2ray/v2ray
+  sh start.sh
+  cd ~
+
+  echo "start msg notify app" >> /root/auto_start.log
+  cd /root/projects/tools/template/bin/supervisor
+  sh start_supervisord.sh
+  sh start.sh
+  cd ~
+
+  echo "new end\n" >> /root/auto_start.log
+  ~~~
+
+* chmod auto_start.sh
+
+  ~~~sh
+  chmod +x auto_start.sh
+  ~~~
+
+* config crontab
+
+  ~~~sh
+  # open crontab
+  crontab -e
+
+  # add reboot command to the end of file
+  @reboot /root/auto_start.sh
+  ~~~
+
+#### 1.3.6.1. mongo db配置开机启动
+
+* create `/lib/systemd/system/mongodb.service`
+
+  ~~~sh
+  [Uint]
+  Description=High-performance, open-source, schema-free document-oriented database
+  After=network.target
+
+  [Service]
+  User=root
+  Group=root
+  Type=forking
+  PIDFile=/run/mongodb.pid
+  ExecStart=mongod --dbpath /root/data/mongo/27027/db --logpath /root/data/mongo/27027/log/mongod.log --port 27027 --fork --pidfilepath /run/mongodb.pid
+  ExecStop=mongod --dbpath /root/data/mongo/27027/db --logpath /root/data/mongo/27027/log/mongod.log --port 27027 --fork --shutdown
+  PrivateTmp=true
+
+  [Install]
+  WantedBy=multi-user.target
+  ~~~
+
+* config start at reboot
+
+  ~~~sh
+  # 设置开机启动
+  systemctl enable mongodb.service
+
+  # 取消开机启动
+  systemctl disable mongodb.service
+
+  # 手动启动
+  systemctl start mongodb.service
+
+  # 查看报错
+  systemctl status mongodb.service
+  ~~~
