@@ -98,6 +98,9 @@
   # ./config
   # make -j100
   apt install libssl-dev
+  
+  # for sqlite3
+  apt install libsqlite3-dev
 
   ~~~
 
