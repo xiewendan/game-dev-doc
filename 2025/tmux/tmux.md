@@ -39,14 +39,18 @@
   # resize
   bind -n C-f resize-pane -Z
 
-  # copy
+  # copy C-i+[ 进入选择，hjkl移动光标，v开始选择，有结束选择，C-i+]黏贴
+  setw -g mode-keys vi
   bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
   bind-key -T copy-mode-vi 'v' send -X begin-selection
 
   # unbind-key -n Tab
   # unbind Tab
-  # bind-key Tab send-keys Tab
-  unbind -n Tab
+  bind-key Tab send-keys Tab
+  # unbind -n Tab
+
+  set -g window-size latest
+  set-window-option -g aggressive-resize on
   ```
 
 ## 2.2. 常见命令

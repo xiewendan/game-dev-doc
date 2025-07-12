@@ -145,6 +145,14 @@ curl -O https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 ~~~
 
+#### 1.3.3.7. create soft link
+
+~~~sh
+ln -s /root/app/python /usr/local/bin/python
+~~~
+
+we can use python in anywhere
+
 ### 1.3.4. supervisor
 
 * in supervisor.conf
