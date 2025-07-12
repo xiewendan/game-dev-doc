@@ -25,25 +25,10 @@
 * 由于docker hub访问问题，所以，国内找了一个可用的debian的镜像下载网站
   * <https://docker.aityp.com/image/docker.io/library/debian:12>
 
-* 中文显示问题
-  * 需要安装中文包，并设置采用zh_CN.UTF-8
-
-    ~~~sh
-    # 安装中文包
-    apt install locales
-    apt install fonts-wqy-microhei fonts-wqy-zenhei
-    # 配置local
-    dpkg-reconfigure locales
-    选择zh_CN.UTF-8 UTF-8
-    # 设置环境变量：~/.bashrc添加下面配置
-    export LANG=zh_CN.UTF-8 
-    export LC_ALL=zh_CN.UTF-8
-    ~~~
-
 * apt安装源设置为国内
 
   ~~~sh
-  # 编辑/etc/apt/sources.list
+  # edit /etc/apt/sources.list， apt update 失败，需要将https替换成http试一下
   deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
   # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
   deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
@@ -53,6 +38,30 @@
   deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
   # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
   ~~~
+
+  ~~~sh
+  # 在安装这些后，，可以把http再改回https
+  apt install openssl ca-certificates 
+  apt install certbot 
+  ~~~
+
+* 中文显示问题
+  * 需要安装中文包，并设置采用zh_CN.UTF-8
+
+    ~~~sh
+    # 安装中文包
+    apt install locales
+    apt install fonts-wqy-microhei fonts-wqy-zenhei
+    
+    # 配置local
+    dpkg-reconfigure locales
+    选择zh_CN.UTF-8 UTF-8
+    # 设置环境变量：~/.bashrc添加下面配置
+    export LANG=zh_CN.UTF-8 
+    export LC_ALL=zh_CN.UTF-8
+    ~~~
+
+    > 设置完需要重启ssh控制台
 
 ## 3.2. 安装常用软件
 

@@ -36,6 +36,8 @@
     ~~~sh
     # 安装git
     apt install git
+    # 安装curl
+    apt install curl
     # 安装zsh
     apt install zsh
     # 安装oh-my-zsh
@@ -122,10 +124,11 @@
 * Run the following commands to configure the build:
 
   ~~~sh
-  ./configure
+  ./configure --enable-optimizations --prefix 安装路径
   ~~~
 
   * --enable-optimizations: all stable optimizations active (PGO, etc)
+  > 建议指定prefix
   > apt install libssl-dev, so no need --with-openssl=/root/app/openssl/openssl-3.2.0: install requests
 
 * If you want to customize the build, you can use options such as --prefix to specify the installation directory.
