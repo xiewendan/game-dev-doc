@@ -63,6 +63,18 @@
 
     > 设置完需要重启ssh控制台
 
+* 时区问题
+
+  ~~~sh
+  dpkg-reconfigure tzdata
+  ~~~
+
+* 缺少ps指令
+  
+  ~~~sh
+  apt install procps 
+  ~~~
+
 ## 3.2. 安装常用软件
 
 * git
