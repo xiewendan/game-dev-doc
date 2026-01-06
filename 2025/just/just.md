@@ -6,30 +6,17 @@
 
 # 2. 解决方案
 
-## 2.1. 安装配置
+## 2.1 just特性
+
+* 支持命令封装
+* 支持传入参数
+
+## 2.2. 安装配置
 
 * 安装参考 [just github](https://github.com/casey/just/blob/master/README.%E4%B8%AD%E6%96%87.md) 预制二进制文件
 
-* 配置 .justfile
+* 参考配置 .justfile
 
-  ```sh
-  default:
-    just help
-  
-  start:
-    start app
-
-  help:
-    @echo ""
-    @echo "all the self define command"
-    @echo "  save -- build save when you modify the save_desc"
-    @echo "  build -- build all server"
-    @echo "  start -- start the server"
-    @echo "  stop -- stop the server"
-    @echo "  dump -- print the traceback"
-    @echo "  clear -- rm all log and run clear command"
-    @echo ""
-  ```
 
 # 3. 结论
 
