@@ -75,7 +75,9 @@
 
 * we need install a lot of lib before build python
 
-  ~~~sh
+  ~~~py
+  # update apt, make sure to find the follow lib
+  apt update
   # for _ctypes module
   apt-get install libffi-dev
   # for _uuid module
