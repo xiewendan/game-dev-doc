@@ -92,8 +92,8 @@
   apt-get install liblzma-dev
   # for _tkinter
   apt-get install tk-dev
-  # for nis
-  apt-get install libnsl-dev
+  # for nis. nis is old module, now is useless, so ignore
+  # apt-get install libnsl-dev
   # for readline
   apt-get install libreadline-dev
 
